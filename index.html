@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Geologic Time — GEOL 1040-001: Physical Geology</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Source+Serif+4:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="progress-bar" id="progressBar" aria-hidden="true"></div>
+
+  <!-- Top Navigation Bar -->
+  <header class="topbar">
+    <div class="topbar-left">
+      <button class="menu-btn" id="menuBtn" aria-label="Toggle navigation menu" aria-expanded="false">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+      <div class="course-badge">
+        <span class="course-code">GEOL 1040-001</span>
+        <span>Physical Geology &middot; Geologic Time</span>
+      </div>
+    </div>
+    <div class="topbar-right">
+      Dr. B &middot; Department of Earth Sciences, Tennessee Tech
+    </div>
+  </header>
+
+  <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+
+  <div class="layout">
+    <!-- Left Sidebar: Search & Table of Contents -->
+    <aside class="sidebar" id="sidebar" aria-label="Study Guide Navigation">
+      <div class="search-wrap">
+        <svg class="search-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input
+          type="search"
+          id="searchInput"
+          class="search-input"
+          placeholder="Search periods, fossils, ages..."
+          aria-label="Search study guide"
+        />
+        <button type="button" id="searchClear" class="search-clear" aria-label="Clear search">&times;</button>
+      </div>
+      <div class="search-status" id="searchStatus" aria-live="polite"></div>
+
+      <div class="toc-label">Units</div>
+      <nav>
+        <ul class="toc-list" id="tocList">
+          <li>
+            <a class="toc-link" href="#time-scales">1. Concept of Time Scales</a>
+          </li>
+          <li>
+            <a class="toc-link" href="#measuring-time">2. Measuring Geologic Time</a>
+          </li>
+          <li>
+            <a class="toc-link" href="#precambrian">
+              <span>3. Precambrian Supereon</span>
+              <span class="era-dot" style="background: var(--precambrian);"></span>
+            </a>
+          </li>
+          <li>
+            <a class="toc-link" href="#paleozoic">
+              <span>4. Paleozoic Era</span>
+              <span class="era-dot" style="background: var(--paleozoic);"></span>
+            </a>
+            <ul class="toc-sublist">
+              <li><a class="toc-sublink" href="#cambrian">Cambrian (542&ndash;488 Ma)</a></li>
+              <li><a class="toc-sublink" href="#ordovician">Ordovician (488&ndash;443 Ma)</a></li>
+              <li><a class="toc-sublink" href="#silurian">Silurian (443&ndash;416 Ma)</a></li>
+              <li><a class="toc-sublink" href="#devonian">Devonian (416&ndash;359 Ma)</a></li>
+              <li><a class="toc-sublink" href="#carboniferous">Carboniferous (359&ndash;299 Ma)</a></li>
+              <li><a class="toc-sublink" href="#permian">Permian (299&ndash;251 Ma)</a></li>
+            </ul>
+          </li>
+          <li>
+            <a class="toc-link" href="#mesozoic">
+              <span>5. Mesozoic Era</span>
+              <span class="era-dot" style="background: var(--mesozoic);"></span>
+            </a>
+            <ul class="toc-sublist">
+              <li><a class="toc-sublink" href="#triassic">Triassic (251&ndash;200 Ma)</a></li>
+              <li><a class="toc-sublink" href="#jurassic">Jurassic (201&ndash;145 Ma)</a></li>
+              <li><a class="toc-sublink" href="#cretaceous">Cretaceous (145&ndash;66 Ma)</a></li>
+            </ul>
+          </li>
+          <li>
+            <a class="toc-link" href="#cenozoic">
+              <span>6. Cenozoic Era</span>
+              <span class="era-dot" style="background: var(--cenozoic);"></span>
+            </a>
+            <ul class="toc-sublist">
+              <li><a class="toc-sublink" href="#paleogene">Paleogene (66&ndash;23 Ma)</a></li>
+              <li><a class="toc-sublink" href="#neogene">Neogene (23&ndash;2.6 Ma)</a></li>
+              <li><a class="toc-sublink" href="#quaternary">Quaternary (2.6&ndash;0 Ma)</a></li>
+            </ul>
+          </li>
+          <li>
+            <a class="toc-link" href="#summary">7. Summary &amp; Deep Time</a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Main Study Content -->
+    <main class="main">
+      <div class="content-container">
+
+        <!-- Hero -->
+        <header class="hero">
+          <div class="hero-eyebrow">GEOL 1040-001</div>
+          <h1>Geologic Time</h1>
+          <p class="hero-subtitle">
+            Earth&rsquo;s 4.6-billion-year story is written in stone, fossils, and extinction boundaries.
+            Use this scrolling guide to explore how geologists divide deep time—from the earliest microbial oceans
+            to the Age of Dinosaurs, Tennessee&rsquo;s ancient seafloors, and the world we live in today.
+          </p>
+          <div class="hero-meta">
+            <span class="meta-pill">Instructor: Dr. B</span>
+            <span class="meta-pill">Department of Earth Sciences, Tennessee Tech</span>
+            <span class="meta-pill">Tip: Click any figure to zoom</span>
+          </div>
+        </header>
+
+        <div class="empty-search" id="emptySearch">
+          No sections match your search. Try another term like <em>trilobite</em>, <em>Celina</em>, <em>extinction</em>, or <em>Ma</em>.
+        </div>
+
+        <!-- SECTION 1: Concept of Time Scales -->
+        <section class="study-section" id="time-scales">
+          <div class="section-header">
+            <span class="section-kicker">Unit 1</span>
+            <h2>The Concept of Time Scales in Arts &amp; Sciences</h2>
+            <p class="section-lead">
+              Every discipline organizes time around major turning points—known as <strong>marker events</strong>—rather than arbitrary tick marks on a clock.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>How Different Fields Divide Time</h3>
+            <p>
+              Imagine trying to describe 4.6 billion years without chapters. Just as a book uses chapters to mark shifts in a story,
+              scientists and historians divide time whenever something fundamental changes.
+            </p>
+            <div class="figure-grid single">
+              <figure class="figure-card">
+                <div class="figure-img-wrap" data-zoom>
+                  <img src="images/image1.jpg" alt="Geologic Time introductory rock strata" loading="lazy" />
+                  <span class="zoom-hint">Click to zoom</span>
+                </div>
+                <figcaption class="figure-caption">
+                  Layered rock formations preserve sequential chapters of Earth&rsquo;s history—the foundation of the Geologic Time Scale.
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>The Historian&rsquo;s Time Scale</h3>
+            <p>
+              Historians divide human prehistory and history by technological breakthroughs that transformed how people lived:
+              the <strong>Stone Age</strong>, the <strong>Bronze Age</strong>, and the <strong>Iron Age</strong>. More recent history is
+              similarly marked by cultural, political, or technological milestones—from ancient empires to the Industrial Revolution and the digital era.
+            </p>
+            <div class="figure-grid">
+              <figure class="figure-card">
+                <div class="figure-img-wrap" data-zoom>
+                  <img src="images/image2.jpg" alt="Stone Age tools" loading="lazy" />
+                  <span class="zoom-hint">Zoom</span>
+                </div>
+                <figcaption class="figure-caption">Stone Age: Early human toolmaking in stone.</figcaption>
+              </figure>
+              <figure class="figure-card">
+                <div class="figure-img-wrap" data-zoom>
+                  <img src="images/image3.jpg" alt="Bronze Age artifacts" loading="lazy" />
+                  <span class="zoom-hint">Zoom</span>
+                </div>
+                <figcaption class="figure-caption">Bronze Age: Metallurgy reshapes tools and trade.</figcaption>
+              </figure>
+              <figure class="figure-card">
+                <div class="figure-img-wrap" data-zoom>
+                  <img src="images/image4.jpg" alt="Iron Age artifacts" loading="lazy" />
+                  <span class="zoom-hint">Zoom</span>
+                </div>
+                <figcaption class="figure-caption">Iron Age: Stronger smelting and widespread iron implements.</figcaption>
+              </figure>
+            </div>
+            <div class="figure-grid single" style="margin-top: 14px;">
+              <figure class="figure-card">
+                <div class="figure-img-wrap" data-zoom>
+                  <img src="images/image5.png" alt="Historian's Time Scale marker events" loading="lazy" />
+                  <span class="zoom-hint">Click to zoom</span>
+                </div>
+                <figcaption class="figure-caption">
+                  Notice how the Historian&rsquo;s Time Scale hinges on clear <strong>marker events</strong> that separate one era from the next.
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>The Astronomer&rsquo;s Time Scale</h3>
+            <p>
+              Astronomers zoom out even further—measuring billions of years from the <strong>Big Bang</strong> (~13.8 billion years ago)
+              through the formation of the first stars, galaxies, our Solar System, and the Sun&rsquo;s eventual evolution. Again, each boundary
+              is defined by a major physical marker event.
+            </p>
+            <div class="figure-grid single">
+              <figure class="figure-card">
+                <div class="figure-img-wrap" data-zoom>
+                  <img src="images/image6.jpg" alt="Astronomer's Time Scale" loading="lazy" />
+                  <span class="zoom-hint">Click to zoom</span>
+                </div>
+                <figcaption class="figure-caption">
+                  The Astronomer&rsquo;s Time Scale tracks cosmic marker events from the Big Bang to the birth and evolution of stars and planets.
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+        </section>
+
+        <!-- SECTION 2: Measuring Geologic Time -->
+        <section class="study-section" id="measuring-time">
+          <div class="section-header">
+            <span class="section-kicker">Unit 2</span>
+            <h2>How Is Geologic Time Measured?</h2>
+            <p class="section-lead">
+              In geology, the primary marker events are biological: the <strong>appearance (birth) of new species</strong> or their <strong>mass extinction</strong>.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>Fossils as Timekeepers &amp; the Unit <code>Ma</code></h3>
+            <p>
+              Because evolution never repeats itself in exactly the same way, each fossil assemblage acts like a unique timestamp in the rock record.
+              Geologists measure these vast spans in <strong>mega-annums</strong>, abbreviated <strong>Ma</strong> (1 Ma = 1,000,000 years),
+              and <strong>giga-annums</strong>, abbreviated <strong>Ga</strong> (1 Ga = 1,000,000,000 years).
+            </p>
+            <blockquote class="quote-box">
+              &ldquo;Our knowledge of organic remains teaches us, that species have a definite existence, and a centralization in geological time
+              as well as in geographical space, and that no species is repeated in time.&rdquo;
+              <span class="quote-author">&mdash; Edward Forbes, <em>The Natural History of the European Seas</em></span>
+            </blockquote>
+            <p>
+              Before diving into the timeline, keep three big benchmark questions in mind:
+              <strong>How old is the universe?</strong> (~13.8 billion years) &middot;
+              <strong>How old is the Earth?</strong> (~4.6 billion years, or 4,600 Ma) &middot;
+              <strong>How old is visible life on Earth?</strong> (~542 Ma, marking the start of the Phanerozoic Eon).
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>Architecture of the Geologic Time Scale</h3>
+            <p>
+              Geologic time is organized hierarchically from broadest to finest:
+              <strong>Supereon &rarr; Eon &rarr; Era &rarr; Period &rarr; Epoch</strong>.
+            </p>
+            <ul>
+              <li><strong>Precambrian Supereon (4,600&ndash;542 Ma):</strong> Encompasses the <em>Hadean</em>, <em>Archean</em>, and <em>Proterozoic</em> Eons. Covers nearly 88% of Earth&rsquo;s history, before abundant hard-shelled visible life appeared.</li>
+              <li><strong>Phanerozoic Eon (542&ndash;0 Ma):</strong> The age of &ldquo;visible life,&rdquo; divided into three Eras—<strong>Paleozoic</strong> (542&ndash;251 Ma), <strong>Mesozoic</strong> (251&ndash;66 Ma), and <strong>Cenozoic</strong> (66 Ma&ndash;Present).</li>
+              <li><strong>Mass Extinctions:</strong> The end of each Era is punctuated by a catastrophic mass extinction event, resetting the ecological stage.</li>
+              <li><strong>Periods:</strong> Each Era is subdivided into Periods defined by the emergence or dominance of signature organisms.</li>
+            </ul>
+
+            <div class="figure-grid">
+              <figure class="figure-card">
+                <div class="figure-img-wrap" data-zoom>
+                  <img src="images/image7.jpg" alt="Detailed Geologic Time Scale chart" loading="lazy" />
+                  <span class="zoom-hint">Click to zoom</span>
+                </div>
+                <figcaption class="figure-caption">
+                  Complete Geologic Time Scale showing Eons, Eras, Periods, Epochs, ages (Ma), life forms, and North American tectonic events.
+                </figcaption>
+              </figure>
+              <figure class="figure-card">
+                <div class="figure-img-wrap" data-zoom>
+                  <img src="images/image9.jpg" alt="Geologic Time Scale visual timeline" loading="lazy" />
+                  <span class="zoom-hint">Click to zoom</span>
+                </div>
+                <figcaption class="figure-caption">
+                  Visualizing the marker events that separate geologic intervals.
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+        </section>
+
+        <!-- SECTION 3: Precambrian Supereon -->
+        <section class="study-section" id="precambrian">
+          <div class="section-header">
+            <span class="section-kicker">Unit 3 &middot; 4,600&ndash;542 Ma</span>
+            <h2>The Precambrian Supereon</h2>
+            <p class="section-lead">
+              The longest chapter of Earth&rsquo;s story—spanning nearly four billion years before skeletons, shells, or forests existed.
+            </p>
+          </div>
+
+          <article class="period-card" data-era="precambrian">
+            <div class="period-header">
+              <h3>Precambrian Supereon (Hadean, Archean &amp; Proterozoic Eons)</h3>
+              <span class="age-badge">~4,600 &ndash; 542 Ma</span>
+            </div>
+            <div class="facts-grid">
+              <div class="fact-item">
+                <span class="fact-label">Subdivisions</span>
+                <span class="fact-value">Hadean (4.6&ndash;3.8 Ga), Archean (3.8&ndash;2.5 Ga), Proterozoic (2.5&ndash;0.542 Ga)</span>
+              </div>
+              <div class="fact-item">
+                <span class="fact-label">Marker Event</span>
+                <span class="fact-value">No major forms of visible life; bacteria &amp; first multicellular organisms only</span>
+              </div>
+            </div>
+            <p>
+              Earth formed around 4,600 Ma (4.6 Ga) during the fiery <strong>Hadean Eon</strong> (&ldquo;hell&rdquo;), cooled to form its first crust and oceans,
+              and hosted the earliest single-celled bacteria and algae in the <strong>Archean Eon</strong> (&ldquo;ancient&rdquo;). By the <strong>Proterozoic Eon</strong>
+              (&ldquo;before life&rdquo;), oxygen began accumulating and the very first soft-bodied multicellular organisms appeared—leaving behind rare fossils
+              because they lacked hard shells or bones.
+            </p>
+            <div class="figure-grid single">
+              <figure class="figure-card">
+                <div class="figure-img-wrap" data-zoom>
+                  <img src="images/image7.jpg" alt="Precambrian at the base of the Geologic Time Scale" loading="lazy" />
+                  <span class="zoom-hint">Click to zoom</span>
+                </div>
+                <figcaption class="figure-caption">
+                  Notice how the Precambrian occupies the entire bottom block of the Geologic Time Scale (4,600 to 542 Ma).
+                </figcaption>
+              </figure>
+            </div>
+          </article>
+        </section>
+
+        <!-- SECTION 4: Paleozoic Era -->
+        <section class="study-section" id="paleozoic">
+          <div class="section-header">
+            <span class="section-kicker">Unit 4 &middot; 542&ndash;251 Ma</span>
+            <h2>The Paleozoic Era (&ldquo;Ancient Life&rdquo;)</h2>
+            <p class="section-lead">
+              Life explodes in the oceans, colonizes land with vascular plants and insects, develops backbones and jaws, and ends in Earth&rsquo;s largest mass extinction.
+            </p>
+          </div>
+
+          <!-- Cambrian -->
+          <article class="period-card" id="cambrian" data-era="paleozoic">
+            <div class="period-header">
+              <h3>Cambrian Period &mdash; Beginning of the Paleozoic Era</h3>
+              <span class="age-badge">~542 &ndash; 488 Ma</span>
+            </div>
+            <div class="facts-grid">
+              <div class="fact-item">
+                <span class="fact-label">Name Origin</span>
+                <span class="fact-value">Cambria (Roman name for Wales, Great Britain)</span>
+              </div>
+              <div class="fact-item">
+                <span class="fact-label">Marker Event</span>
+                <span class="fact-value">Explosion of visible, hard-shelled life on Earth</span>
+              </div>
+            </div>
+            <p>
+              Suddenly in the rock record, marine ecosystems burst with diversity—an event famous as the <strong>Cambrian Explosion</strong>.
+              Organisms evolved hard shells and exoskeletons, dramatically increasing their odds of fossilization. Iconic <strong>trilobites</strong>
+              crawled across shallow seafloors, becoming one of the hallmark index fossils of the early Paleozoic.
+            </p>
+            <div class="figure-grid">
+              <figure class="figure-card">
+                <div class="figure-img-wrap" data-zoom>
+                  <img src="images/image10.jpg" alt="Cambrian marine life reconstruction" loading="lazy" />
+                  <span class="zoom-hint">Zoom</span>
+                </div>
+                <figcaption class="figure-caption">Cambrian seafloor teeming with early marine invertebrates.</figcaption>
+              </figure>
+              <figure class="figure-card">
+                <div class="figure-img-wrap" data-zoom>
+                  <img src="images/image11.jpg" alt="Trilobite fossil" loading="lazy" />
+                  <span class="zoom-hint">Zoom</span>
+                </div>
+                <figcaption class="figure-caption">Trilobite fossil &mdash; signature arthropod of the Cambrian seas.</figcaption>
+              </figure>
+            </div>
+          </article>
+
+          <!-- Ordovician -->
+          <article class="period-card" id="ordovician" data-era="paleozoic">
+            <div class="period-header">
+              <h3>Ordovician Period</h3>
+              <span class="age-badge">~488 &ndash; 443 Ma</span>
+            </div>
+            <div class="facts-grid">
+              <div class="fact-item">
+                <span class="fact-label">Name Origin</span>
+                <span class="fact-value">Ordovices (an ancient Celtic tribe in Wales)</span>
+              </div>
+              <div class="fact-item">
+                <span class="fact-label">Marker Event</span>
+                <span class="fact-value">First jawless fish (earliest vertebrates)</span>
+              </div>
+            </div>
+            <p>
+              Invertebrates still ruled the oceans—trilobites reached peak diversity alongside corals and brachiopods—but a quiet revolution was underway:
+              the appearance of the <strong>first jawless fish</strong>, our earliest vertebrate ancestors, armored in bony plates.
+            </p>
+            <div class="figure-grid">
+              <figure class="figure-card">
+                <div class="figure-img-wrap" data-zoom>
+                  <img src="images/image12.jpg" alt="Ordovician jawless fish" loading="lazy" />
+                  <span class="zoom-hint">Zoom</span>
+                </div>
+                <figcaption class="figure-caption">Reconstruction of early Ordovician jawless fish.</figcaption>
+              </figure>
+              <figure class="figure-card">
+                <div class="figure-img-wrap" data-zoom>
+                  <img src="images/image13.jpg" alt="Ordovician fish fossil" loading="lazy" />
+                  <span class="zoom-hint">Zoom</span>
+                </div>
+                <figcaption class="figure-caption">Ordovician fish fossil preserved in marine sediment.</figcaption>
+              </figure>
+            </div>
+          </article>
+
+          <!-- Silurian -->
+          <article class="period-card" id="silurian" data-era="paleozoic">
+            <div class="period-header">
+              <h3>Silurian Period</h3>
+              <span class="age-badge">443 &ndash; 416 Ma</span>
+            </div>
+            <div class="facts-grid">
+              <div class="fact-item">
+                <span class="fact-label">Name Origin</span>
+                <span class="fact-value">Silures (a Celtic tribe of the Welsh borderlands)</span>
+              </div>
+              <div class="fact-item">
+                <span class="fact-label">Marker Event</span>
+                <span class="fact-value">Vascular plants appear on land</span>
+              </div>
+            </div>
+            <p>
+              For billions of years, Earth&rsquo;s continents were barren rock. During the Silurian, <strong>vascular plants</strong>—plants with internal
+              plumbing to transport water and nutrients—took root along shorelines and wetlands, paving the way for terrestrial ecosystems.
+            </p>
+            <div class="figure-grid">
+              <figure class="figure-card">
+                <div class="figure-img-wrap" data-zoom>
+                  <img src="images/image14.jpg" alt="Early Silurian land landscape" loading="lazy" />
+                  <span class="zoom-hint">Zoom</span>
+                </div>
+                <figcaption class="figure-caption">Early vascular plants begin greening the continents.</figcaption>
+              </figure>
+              <figure class="figure-card">
+                <div class="figure-img-wrap" data-zoom>
+                  <img src="images/image15.jpg" alt="Silurian plant fossil" loading="lazy" />
+                  <span class="zoom-hint">Zoom</span>
+                </div>
+                <figcaption class="figure-caption">Plant fossil from early terrestrial deposits.</figcaption>
+              </figure>
+            </div>
+          </article>
+
+          <!-- Devonian -->
+          <article class="period-card" id="devonian" data-era="paleozoic">
+            <div class="period-header">
+              <h3>Devonian Period</h3>
+              <span class="age-badge">416 &ndash; 359 Ma</span>
+            </div>
+            <div class="facts-grid">
+              <div class="fact-item">
+                <span class="fact-label">Name Origin</span>
+                <span class="fact-value">Devon, England</span>
+              </div>
+              <div class="fact-item">
+                <span class="fact-label">Marker Event</span>
+                <span class="fact-value">Age of Fishes</span>
+              </div>
+            </div>
+            <p>
+              Known worldwide as the <strong>Age of Fishes</strong>, Devonian seas hosted everything from armored placoderms and early sharks to
+              lobe-finned fishes—the group that would eventually evolve limbs and crawl onto land.
+            </p>
+            <div class="figure-grid">
+              <figure class="figure-card">
+                <div class="figure-img-wrap" data-zoom>
+                  <img src="images/image16.jpg" alt="Devonian marine fishes" loading="lazy" />
+                  <span class="zoom-hint">Zoom</span>
+                </div>
+                <figcaption class="figure-caption">Devonian seas dominated by diverse jawed and armored fishes.</figcaption>
+              </figure>
+              <figure class="figure-card">
+                <div class="figure-img-wrap" data-zoom>
+                  <img src="images/image17.jpeg" alt="Devonian fish fossils" loading="lazy" />
+                  <span class="zoom-hint">Zoom</span>
+                </div>
+                <figcaption class="figure-caption">Devonian fish fossils.</figcaption>
+              </figure>
+            </div>
+          </article>
+
+          <!-- Carboniferous -->
+          <article class="period-card" id="carboniferous" data-era="paleozoic">
+            <div class="period-header">
+              <h3>Carboniferous Period (Mississippian &amp; Pennsylvanian)</h3>
+              <span class="age-badge">~359 &ndash; 299 Ma</span>
+            </div>
+            <div class="facts-grid">
+              <div class="fact-item">
+                <span class="fact-label">Name Origin</span>
+                <span class="fact-value">Latin for &ldquo;coal-bearing&rdquo;</span>
+              </div>
+              <div class="fact-item">
+                <span class="fact-label">Marker Events</span>
+                <span class="fact-value">Towering trees dominate, first amphibians &amp; first reptiles, vast coal swamps</span>
+              </div>
+            </div>
+            <p>
+              In North America, geologists split the Carboniferous into two sub-periods—the <strong>Mississippian</strong> and the <strong>Pennsylvanian</strong>—reflecting
+              a dramatic shift from shallow tropical seas to lush, coal-forming swamps.
+            </p>
+            <div class="figure-grid">
+              <figure class="figure-card">
+                <div class="figure-img-wrap" data-zoom>
+                  <img src="images/image18.jpg" alt="Carboniferous forest swamp" loading="lazy" />
+                  <span class="zoom-hint">Zoom</span>
+                </div>
+                <figcaption class="figure-caption">Lush Carboniferous forests dominated by giant lycopods and ferns.</figcaption>
+              </figure>
+              <figure class="figure-card">
+                <div class="figure-img-wrap" data-zoom>
+                  <img src="images/image19.jpg" alt="Carboniferous plant fossils" loading="lazy" />
+                  <span class="zoom-hint">Zoom</span>
+                </div>
+                <figcaption class="figure-caption">Carboniferous plant fossils preserved in shale.</figcaption>
+              </figure>
+              <figure class="figure-card">
+                <div class="figure-img-wrap" data-zoom>
+                  <img src="images/image20.gif" alt="Early Carboniferous reptile or tetrapod" loading="lazy" />
+                  <span class="zoom-hint">Zoom</span>
+                </div>
+                <figcaption class="figure-caption">First reptiles appear, able to lay eggs on dry land.</figcaption>
+              </figure>
+            </div>
+
+            <h4 style="margin: 22px 0 8px; font-size: 1.05rem;">Mississippian Time (~359&ndash;318 Ma)</h4>
+            <p>
+              Named for rocks exposed along the <strong>Mississippi Valley</strong>, Mississippian time saw <strong>extremely high global sea levels</strong>
+              and the rise of the <strong>first amphibians</strong>. Much of eastern North America lay beneath a warm, shallow inland sea—depositing thick
+              layers of fossil-rich marine limestone.
+            </p>
+            <div class="callout callout-local">
+              <span class="callout-title">Right Here in Tennessee: Celina, TN</span>
+              You can see the Mississippian Period in person near <strong>Celina, Tennessee</strong>, where thick outcrops of
+              Mississippian marine limestone record that ancient shallow sea.
+            </div>
+            <div class="figure-grid">
+              <figure class="figure-card">
+                <div class="figure-img-wrap" data-zoom>
+                  <img src="images/image21.jpg" alt="Mississippian amphibian and shallow sea" loading="lazy" />
+                  <span class="zoom-hint">Zoom</span>
+                </div>
+                <figcaption class="figure-caption">Mississippian shallow seas and early amphibians.</figcaption>
+              </figure>
+              <figure class="figure-card">
+                <div class="figure-img-wrap" data-zoom>
+                  <img src="images/image22.jpg" alt="Marine limestones of Mississippian age near Celina, TN" loading="lazy" />
+                  <span class="zoom-hint">Zoom</span>
+                </div>
+                <figcaption class="figure-caption">Marine limestones of Mississippian age near Celina, TN.</figcaption>
+              </figure>
+              <figure class="figure-card">
+                <div class="figure-img-wrap" data-zoom>
+                  <img src="images/image23.jpg" alt="Mississippian limestone outcrop near Celina, TN" loading="lazy" />
+                  <span class="zoom-hint">Zoom</span>
+                </div>
+                <figcaption class="figure-caption">Outcrop view of Mississippian marine limestones near Celina, TN.</figcaption>
+              </figure>
+            </div>
+
+            <h4 style="margin: 22px 0 8px; font-size: 1.05rem;">Pennsylvanian Time (~318&ndash;299 Ma)</h4>
+            <p>
+              Named after the state of <strong>Pennsylvania</strong>, where extensive coal beds of this age are mined, the Pennsylvanian was marked by
+              vast <strong>coal-forming swamps</strong>, abundant <strong>sharks</strong> in coastal waters, and a remarkable <strong>variety of insects</strong>
+              (including giant dragonflies fueled by high atmospheric oxygen).
+            </p>
+            <div class="figure-grid">
+              <figure class="figure-card">
+                <div class="figure-img-wrap" data-zoom>
+                  <img src="images/image24.jpg" alt="Pennsylvanian coal-forming swamp" loading="lazy" />
+                  <span class="zoom-hint">Zoom</span>
+                </div>
+                <figcaption class="figure-caption">Pennsylvanian coal-forming swamps and giant insects.</figcaption>
+              </figure>
+              <figure class="figure-card">
+                <div class="figure-img-wrap" data-zoom>
+                  <img src="images/image25.jpg" alt="Pennsylvanian plant fossils" loading="lazy" />
+                  <span class="zoom-hint">Zoom</span>
+                </div>
+                <figcaption class="figure-caption">Pennsylvanian plant fossils.</figcaption>
+              </figure>
+            </div>
+          </article>
+
+          <!-- Permian -->
+          <article class="period-card" id="permian" data-era="paleozoic">
+            <div class="period-header">
+              <h3>Permian Period &mdash; End of the Paleozoic Era</h3>
+              <span class="age-badge">299 &ndash; 251 Ma</span>
+            </div>
+            <div class="facts-grid">
+              <div class="fact-item">
+                <span class="fact-label">Name Origin</span>
+                <span class="fact-value">Permia, Russia</span>
+              </div>
+              <div class="fact-item">
+                <span class="fact-label">Key Tectonic &amp; Climate Events</span>
+                <span class="fact-value">Coal swamps diminish; Appalachian Orogeny; Pangaea assembled</span>
+              </div>
+            </div>
+            <p>
+              As continents collided to form the supercontinent Pangaea—triggering the <strong>Appalachian Orogeny</strong> that built the ancient
+              Appalachian Mountains—interior climates dried out and coal-forming swamps shrank.
+            </p>
+            <div class="callout callout-extinction">
+              <span class="callout-title">Major Mass Extinction #1 (The Largest in Earth History)</span>
+              At the end of the Permian (~251 Ma), widespread volcanism triggered catastrophic climate and ocean disruption:
+              <strong>~90% of marine species</strong> and <strong>~70% of land species</strong> went extinct, closing the Paleozoic Era.
+            </div>
+            <div class="figure-grid single">
+              <figure class="figure-card">
+                <div class="figure-img-wrap" data-zoom>
+                  <img src="images/image26.jpeg" alt="Permian landscape and volcanism" loading="lazy" />
+                  <span class="zoom-hint">Click to zoom</span>
+                </div>
+                <figcaption class="figure-caption">
+                  Permian volcanism and environmental upheaval culminated in the largest mass extinction in Earth&rsquo;s history.
+                </figcaption>
+              </figure>
+            </div>
+          </article>
+        </section>
+
+        <!-- SECTION 5: Mesozoic Era -->
+        <section class="study-section" id="mesozoic">
+          <div class="section-header">
+            <span class="section-kicker">Unit 5 &middot; 251&ndash;66 Ma</span>
+            <h2>The Mesozoic Era (&ldquo;Middle Life&rdquo;)</h2>
+            <p class="section-lead">
+              The Age of Reptiles and Dinosaurs—also witnessing the first mammals, the first flowering plants, and a dramatic asteroid-driven finale.
+            </p>
+          </div>
+
+          <!-- Triassic -->
+          <article class="period-card" id="triassic" data-era="mesozoic">
+            <div class="period-header">
+              <h3>Triassic Period &mdash; Beginning of the Mesozoic Era</h3>
+              <span class="age-badge">~251 &ndash; 200 Ma</span>
+            </div>
+            <div class="facts-grid">
+              <div class="fact-item">
+                <span class="fact-label">Name Origin</span>
+                <span class="fact-value">Trias (three distinct rock units in Germany)</span>
+              </div>
+              <div class="fact-item">
+                <span class="fact-label">Marker Event</span>
+                <span class="fact-value">Dinosaurs appear</span>
+              </div>
+            </div>
+            <p>
+              In the wake of the Permian extinction, ecosystems slowly recovered and diversified. Reptiles radiated into vacant niches,
+              and the <strong>first dinosaurs</strong> appeared on Pangaea.
+            </p>
+            <div class="figure-grid">
+              <figure class="figure-card">
+                <div class="figure-img-wrap" data-zoom>
+                  <img src="images/image27.jpg" alt="Triassic early dinosaurs" loading="lazy" />
+                  <span class="zoom-hint">Zoom</span>
+                </div>
+                <figcaption class="figure-caption">Early dinosaurs emerge during the Triassic Period.</figcaption>
+              </figure>
+              <figure class="figure-card">
+                <div class="figure-img-wrap" data-zoom>
+                  <img src="images/image28.jpg" alt="Dinosaur fossil" loading="lazy" />
+                  <span class="zoom-hint">Zoom</span>
+                </div>
+                <figcaption class="figure-caption">Triassic dinosaur fossil.</figcaption>
+              </figure>
+            </div>
+          </article>
+
+          <!-- Jurassic -->
+          <article class="period-card" id="jurassic" data-era="mesozoic">
+            <div class="period-header">
+              <h3>Jurassic Period</h3>
+              <span class="age-badge">201 &ndash; 145 Ma</span>
+            </div>
+            <div class="facts-grid">
+              <div class="fact-item">
+                <span class="fact-label">Name Origin</span>
+                <span class="fact-value">Jura Mountains (Alps, Western Europe)</span>
+              </div>
+              <div class="fact-item">
+                <span class="fact-label">Marker Events</span>
+                <span class="fact-value">Age of Reptiles; First Mammals appear</span>
+              </div>
+            </div>
+            <p>
+              As Pangaea began to rift apart, giant dinosaurs dominated land, pterosaurs patrolled the skies, and marine reptiles ruled the seas.
+              Tucked quietly into the undergrowth were the <strong>first mammals</strong>—small, mostly nocturnal creatures living in the shadow of giants.
+            </p>
+            <div class="figure-grid">
+              <figure class="figure-card">
+                <div class="figure-img-wrap" data-zoom>
+                  <img src="images/image29.jpg" alt="Jurassic Age of Reptiles" loading="lazy" />
+                  <span class="zoom-hint">Zoom</span>
+                </div>
+                <figcaption class="figure-caption">Jurassic ecosystems: peak of the Age of Reptiles alongside the first mammals.</figcaption>
+              </figure>
+              <figure class="figure-card">
+                <div class="figure-img-wrap" data-zoom>
+                  <img src="images/image30.png" alt="Map of Jura Mountains" loading="lazy" />
+                  <span class="zoom-hint">Zoom</span>
+                </div>
+                <figcaption class="figure-caption">Location of the Jura Mountains in Western Europe.</figcaption>
+              </figure>
+              <figure class="figure-card">
+                <div class="figure-img-wrap" data-zoom>
+                  <img src="images/image31.jpg" alt="Jura Mountains landscape" loading="lazy" />
+                  <span class="zoom-hint">Zoom</span>
+                </div>
+                <figcaption class="figure-caption">The Jura Mountains, namesake of the Jurassic Period.</figcaption>
+              </figure>
+            </div>
+          </article>
+
+          <!-- Cretaceous -->
+          <article class="period-card" id="cretaceous" data-era="mesozoic">
+            <div class="period-header">
+              <h3>Cretaceous Period &mdash; End of the Mesozoic Era</h3>
+              <span class="age-badge">145 &ndash; 66 Ma</span>
+            </div>
+            <div class="facts-grid">
+              <div class="fact-item">
+                <span class="fact-label">Name Origin</span>
+                <span class="fact-value"><em>Creta</em> (Latin for chalk &mdash; chalk deposits were widespread)</span>
+              </div>
+              <div class="fact-item">
+                <span class="fact-label">Marker Events</span>
+                <span class="fact-value">First placental mammals &amp; early flowering plants appear</span>
+              </div>
+            </div>
+            <p>
+              Warm seas covered broad continental shelves, depositing thick blankets of microscopic marine shells that hardened into
+              <strong>chalk</strong>—giving the Cretaceous its name. On land, <strong>early flowering plants</strong> transformed landscapes
+              and <strong>first placental mammals</strong> appeared.
+            </p>
+            <div class="callout callout-extinction">
+              <span class="callout-title">Major Mass Extinction #2 (66 Ma)</span>
+              The Mesozoic Era ended abruptly when a massive <strong>asteroid impact</strong> struck Earth, triggering global wildfires,
+              impact winter, and ecological collapse—wiping out all non-avian <strong>dinosaurs</strong>.
+            </div>
+            <div class="figure-grid">
+              <figure class="figure-card">
+                <div class="figure-img-wrap" data-zoom>
+                  <img src="images/image32.jpg" alt="Cretaceous flowering plants and dinosaurs" loading="lazy" />
+                  <span class="zoom-hint">Zoom</span>
+                </div>
+                <figcaption class="figure-caption">Cretaceous life: flowering plants and late Mesozoic dinosaurs.</figcaption>
+              </figure>
+              <figure class="figure-card">
+                <div class="figure-img-wrap" data-zoom>
+                  <img src="images/image33.jpg" alt="Cretaceous asteroid impact" loading="lazy" />
+                  <span class="zoom-hint">Zoom</span>
+                </div>
+                <figcaption class="figure-caption">The end-Cretaceous asteroid impact (~66 Ma) ended the Age of Dinosaurs.</figcaption>
+              </figure>
+              <figure class="figure-card">
+                <div class="figure-img-wrap" data-zoom>
+                  <img src="images/image34.jpg" alt="Chalk quarry, Crete, Greece" loading="lazy" />
+                  <span class="zoom-hint">Zoom</span>
+                </div>
+                <figcaption class="figure-caption">Chalk quarry in Crete, Greece &mdash; <em>Creta</em> (&ldquo;chalk&rdquo;) gives the Cretaceous its name.</figcaption>
+              </figure>
+            </div>
+          </article>
+        </section>
+
+        <!-- SECTION 6: Cenozoic Era -->
+        <section class="study-section" id="cenozoic">
+          <div class="section-header">
+            <span class="section-kicker">Unit 6 &middot; 66 Ma&ndash;Present</span>
+            <h2>The Cenozoic Era (&ldquo;Recent Life&rdquo;)</h2>
+            <p class="section-lead">
+              With dinosaurs gone, mammals rapidly diversify to fill land, sea, and air—leading through ice ages to the rise of humans.
+            </p>
+          </div>
+
+          <!-- Paleogene -->
+          <article class="period-card" id="paleogene" data-era="cenozoic">
+            <div class="period-header">
+              <h3>Paleogene Period &mdash; Cenozoic Era Begins</h3>
+              <span class="age-badge">66 &ndash; 23 Ma</span>
+            </div>
+            <div class="facts-grid">
+              <div class="fact-item">
+                <span class="fact-label">Name Origin</span>
+                <span class="fact-value">Greek for &ldquo;ancient-born&rdquo;</span>
+              </div>
+              <div class="fact-item">
+                <span class="fact-label">Marker Event</span>
+                <span class="fact-value">Age of Mammals begins</span>
+              </div>
+            </div>
+            <p>
+              Following the asteroid impact, surviving small mammals exploded in size and diversity, launching the <strong>Age of Mammals</strong>
+              across forests and grasslands.
+            </p>
+            <div class="figure-grid single">
+              <figure class="figure-card">
+                <div class="figure-img-wrap" data-zoom>
+                  <img src="images/image35.jpg" alt="Paleogene Age of Mammals" loading="lazy" />
+                  <span class="zoom-hint">Click to zoom</span>
+                </div>
+                <figcaption class="figure-caption">Paleogene mammals diversify rapidly into open ecological niches.</figcaption>
+              </figure>
+            </div>
+          </article>
+
+          <!-- Neogene -->
+          <article class="period-card" id="neogene" data-era="cenozoic">
+            <div class="period-header">
+              <h3>Neogene Period</h3>
+              <span class="age-badge">23 &ndash; 2.6 Ma</span>
+            </div>
+            <div class="facts-grid">
+              <div class="fact-item">
+                <span class="fact-label">Marker Events</span>
+                <span class="fact-value">First hominids appear; mammoths dominant</span>
+              </div>
+            </div>
+            <p>
+              As global climates cooled and grasslands expanded, giant grazing mammals such as <strong>mammoths</strong> thrived,
+              and the <strong>first hominids</strong> appeared in Africa.
+            </p>
+            <div class="figure-grid">
+              <figure class="figure-card">
+                <div class="figure-img-wrap" data-zoom>
+                  <img src="images/image36.jpeg" alt="Neogene mammoth" loading="lazy" />
+                  <span class="zoom-hint">Zoom</span>
+                </div>
+                <figcaption class="figure-caption">Mammoths and large grazing mammals dominate Neogene landscapes.</figcaption>
+              </figure>
+              <figure class="figure-card">
+                <div class="figure-img-wrap" data-zoom>
+                  <img src="images/image37.jpg" alt="Early hominids in the Neogene" loading="lazy" />
+                  <span class="zoom-hint">Zoom</span>
+                </div>
+                <figcaption class="figure-caption">First hominids appear during the Neogene Period.</figcaption>
+              </figure>
+            </div>
+          </article>
+
+          <!-- Quaternary -->
+          <article class="period-card" id="quaternary" data-era="cenozoic">
+            <div class="period-header">
+              <h3>Quaternary Period</h3>
+              <span class="age-badge">2.6 &ndash; 0 Ma (Present)</span>
+            </div>
+            <div class="facts-grid">
+              <div class="fact-item">
+                <span class="fact-label">Marker Events</span>
+                <span class="fact-value">Last Ice Age &amp; Our Times</span>
+              </div>
+            </div>
+            <p>
+              The Quaternary spans repeated glacial cycles—including the <strong>Last Ice Age</strong>, when woolly mammoths roamed
+              across frozen steppes—and brings us right into the present day (the Holocene Epoch).
+            </p>
+            <div class="figure-grid">
+              <figure class="figure-card">
+                <div class="figure-img-wrap" data-zoom>
+                  <img src="images/image38.gif" alt="Ice Age glaciation" loading="lazy" />
+                  <span class="zoom-hint">Zoom</span>
+                </div>
+                <figcaption class="figure-caption">Quaternary Ice Age glaciation cycles.</figcaption>
+              </figure>
+              <figure class="figure-card">
+                <div class="figure-img-wrap" data-zoom>
+                  <img src="images/image39.jpg" alt="Woolly mammoth fossil" loading="lazy" />
+                  <span class="zoom-hint">Zoom</span>
+                </div>
+                <figcaption class="figure-caption">Woolly mammoth fossil from the Quaternary Ice Age.</figcaption>
+              </figure>
+            </div>
+          </article>
+        </section>
+
+        <!-- SECTION 7: Summary & Deep Time Perspective -->
+        <section class="study-section" id="summary">
+          <div class="section-header">
+            <span class="section-kicker">Unit 7</span>
+            <h2>Summary &amp; Deep Time Perspective</h2>
+            <p class="section-lead">
+              Putting the whole 4.6-billion-year picture together—and seeing where we sit on the cosmic clock.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>Quick Self-Check: Where Are We Today?</h3>
+            <p>
+              We live in the <strong>Phanerozoic Eon</strong> &rarr; <strong>Cenozoic Era</strong> &rarr; <strong>Quaternary Period</strong> (Holocene Epoch).
+            </p>
+
+            <table class="hierarchy-table">
+              <thead>
+                <tr>
+                  <th>Division</th>
+                  <th>Name &amp; Meaning</th>
+                  <th>Age Span</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Eon</td>
+                  <td><strong>Phanerozoic</strong> (&ldquo;visible life&rdquo;)</td>
+                  <td><code>542 &ndash; 0 Ma</code></td>
+                </tr>
+                <tr>
+                  <td>Eon (Precambrian)</td>
+                  <td><strong>Proterozoic</strong> (&ldquo;before life&rdquo;)</td>
+                  <td><code>2.5 &ndash; 0.542 Ga</code></td>
+                </tr>
+                <tr>
+                  <td>Eon (Precambrian)</td>
+                  <td><strong>Archean</strong> (&ldquo;ancient&rdquo;)</td>
+                  <td><code>3.8 &ndash; 2.5 Ga</code></td>
+                </tr>
+                <tr>
+                  <td>Eon (Precambrian)</td>
+                  <td><strong>Hadean</strong> (&ldquo;hell&rdquo;)</td>
+                  <td><code>4.6 &ndash; 3.8 Ga</code></td>
+                </tr>
+                <tr>
+                  <td>Era</td>
+                  <td><strong>Cenozoic</strong> (&ldquo;recent life&rdquo;)</td>
+                  <td><code>66 Ma &ndash; Present</code></td>
+                </tr>
+                <tr>
+                  <td>Era</td>
+                  <td><strong>Mesozoic</strong> (&ldquo;middle life&rdquo;)</td>
+                  <td><code>251 &ndash; 66 Ma</code></td>
+                </tr>
+                <tr>
+                  <td>Era</td>
+                  <td><strong>Paleozoic</strong> (&ldquo;ancient life&rdquo;)</td>
+                  <td><code>542 &ndash; 251 Ma</code></td>
+                </tr>
+              </tbody>
+            </table>
+
+            <div class="figure-grid">
+              <figure class="figure-card">
+                <div class="figure-img-wrap" data-zoom>
+                  <img src="images/image40.png" alt="Expanded Geologic Time Scale from Precambrian to Holocene" loading="lazy" />
+                  <span class="zoom-hint">Click to zoom</span>
+                </div>
+                <figcaption class="figure-caption">
+                  Proportional Geologic Time Scale zooming in from the Precambrian Supereon to the Phanerozoic, Cenozoic, and Quaternary.
+                </figcaption>
+              </figure>
+              <figure class="figure-card">
+                <div class="figure-img-wrap" data-zoom>
+                  <img src="images/image8.png" alt="Geologic Time Simplified chart" loading="lazy" />
+                  <span class="zoom-hint">Click to zoom</span>
+                </div>
+                <figcaption class="figure-caption">
+                  Geologic Time &mdash; Simplified: Eons, Eras, Periods, Dominant Life Ages, and Key Marker Events at a glance.
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>Geologic Time in Perspective: The Cosmic Calendar</h3>
+            <p>
+              To grasp just how vast 13.8 billion years of cosmic history—and 4.6 billion years of Earth history—really are,
+              imagine compressing the entire history of the universe into a <strong>single calendar year</strong>. The Big Bang happens at midnight
+              on January 1. Our Solar System doesn&rsquo;t form until September. Visible life explodes in mid-December, dinosaurs appear on
+              December 25 and vanish on December 30, and all of recorded human history happens in the <strong>final seconds before midnight on December 31</strong>.
+            </p>
+            <div class="figure-grid single">
+              <figure class="figure-card">
+                <div class="figure-img-wrap" data-zoom>
+                  <img src="images/image41.png" alt="The Cosmic Calendar" loading="lazy" />
+                  <span class="zoom-hint">Click to zoom</span>
+                </div>
+                <figcaption class="figure-caption">
+                  The Cosmic Calendar: 13.8 billion years scaled to a single year (click to zoom in and read every milestone).
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+        </section>
+
+        <footer class="site-footer">
+          <span>GEOL 1040-001: Physical Geology &middot; Dr. B</span>
+          <span>Department of Earth Sciences, Tennessee Tech</span>
+        </footer>
+      </div>
+    </main>
+  </div>
+
+  <!-- Back to Top Button -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top" title="Back to top">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+
+  <!-- Image Zoom Box (Lightbox) -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image zoom viewer">
+    <div class="lightbox-toolbar">
+      <button type="button" class="lb-btn" id="lbZoomBtn" title="Toggle 1.6x zoom">Zoom</button>
+      <button type="button" class="lb-btn" id="lbCloseBtn" title="Close (Esc)">&times; Close</button>
+    </div>
+    <button type="button" class="lb-nav lb-prev" id="lbPrevBtn" aria-label="Previous image">&#8249;</button>
+    <div class="lightbox-stage" id="lbStage">
+      <img id="lbImg" src="" alt="" />
+    </div>
+    <button type="button" class="lb-nav lb-next" id="lbNextBtn" aria-label="Next image">&#8250;</button>
+    <div class="lightbox-caption" id="lbCaption"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
